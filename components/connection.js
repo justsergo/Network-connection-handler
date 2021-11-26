@@ -10,7 +10,7 @@ import {styles} from '../styles/styles';
 
 const Conect = () => {
   const [wiFi, setWiFi] = React.useState(false);
-  const [intenrnet, setIntenrnet] = React.useState(false);
+  const [internet, setInternet] = React.useState(false);
   const [connect, setConnect] = React.useState(false);
 
   const netInfo = useNetInfo();
@@ -23,7 +23,7 @@ const Conect = () => {
   React.useEffect(() => {
     const unsubscribe = NetInfo.addEventListener(state => {
       state.isWifiEnabled ? setWiFi(true) : setWiFi(false);
-      state.isInternetReachable ? setIntenrnet(true) : setIntenrnet(false);
+      state.isInternetReachable ? setInternet(true) : setInternet(false);
     });
 
     return () => unsubscribe();
@@ -43,7 +43,7 @@ const Conect = () => {
         <Image
           style={styles.image}
           source={{
-            uri: intenrnet
+            uri: internet
               ? 'https://cdn0.iconfinder.com/data/icons/signal-indicators/24/_4G-512.png'
               : 'https://cdn4.iconfinder.com/data/icons/zoldo-miscellaneous-003/64/no_signal_no_network_bad_network-512.png',
           }}
