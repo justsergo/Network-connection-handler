@@ -1,8 +1,8 @@
 import React from 'react';
-import Conect from './components/connection';
+import Connection from './components/connection';
 
 const App = () => {
-  return <Conect />;
+  return <Connection />;
 };
 
 export default App;
