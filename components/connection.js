@@ -11,13 +11,13 @@ import {styles} from '../styles/styles';
 const Connection = () => {
   const [isOnwiFi, setIsOnwiFi] = React.useState(false);
   const [isOnMobileInternet, setIsOnMobileInternet] = React.useState(false);
-  const [isConnect, setIsConnect] = React.useState(false);
+  const [isConnected, setIsConnected] = React.useState(false);
 
   const netInfo = useNetInfo();
 
   React.useEffect(() => {
     const statusConnect = netInfo.isConnected;
-    statusConnect ? setIsConnect(true) : setIsConnect(false);
+    statusConnect ? setIsConnected(true) : setIsConnected(false);
   });
 
   React.useEffect(() => {
@@ -52,7 +52,7 @@ const Connection = () => {
         />
       </View>
       <Text style={styles.text}>
-        Статус сети: {isConnect ? 'Включен' : 'Отключен'}
+        Статус сети: {isConnected ? 'Включен' : 'Отключен'}
       </Text>
     </SafeAreaView>
   );
